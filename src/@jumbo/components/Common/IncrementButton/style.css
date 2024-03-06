@@ -1,0 +1,41 @@
+.increment-decrement-container {
+    display: flex;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    align-items: center;
+  }
+  
+  .increment-decrement-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+  }
+  .decrement-button {
+    background-color: red;
+  }
+  
+  .increment-button {
+    background-color: green;
+  }
+  .increment-decrement-input {
+    margin: 0 10px;
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  /* Chrome, Safari, Edge, Opera */
+.increment-decrement-input::-webkit-outer-spin-button,
+.increment-decrement-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.increment-decrement-input[type=number] {
+  -moz-appearance: textfield;
+}

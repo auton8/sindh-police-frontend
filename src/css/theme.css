@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'CircularStd-Bold';
+    src: url('../fonts/CircularStd-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'CircularStd-Medium';
+    src: url('../fonts/CircularStd-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'CircularStd-Black';
+    src: url('../fonts/CircularStd-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'CircularStd-Light';
+    src: url('../fonts/CircularStd-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* new login css start */
+.loginLeft{
+    width: 50%;
+    background: url('../img/loginLeft.png') left top no-repeat;
+    height: 100vh;
+    float: left;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .outerFormBox{
+    padding: 0px 160px;
+    box-sizing: border-box;
+  }
+  .loginLeft .MuiOutlinedInput-adornedStart {
+    height: 56px;
+    border-radius: 12px;
+  }
+.filedfocus
+    .MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+    border-color: #00DB79;
+}
+.filedfocusError
+    .MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+    border-color: red;
+}
+  .loginLeft .MuiOutlinedInput-notchedOutline {
+    border-color: rgb(229, 231, 235, 1);
+  }
+  .loginLeft  .MuiOutlinedInput-inputAdornedStart {
+    padding-left: 10px;
+  }
+.loginLeft h1{
+    font-family: 'CircularStd-Bold';
+    color: #BCC6C4;
+    font-size: 30px;
+    line-height: 34px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    /* padding: 0px 40px 0px; */
+}
+.loginLeft h1 span{
+    color: #15B79E;
+}
+.loginLeft h3{
+    padding: 15px 0px 30px;
+    font-family: 'CircularStd-Medium';
+    color: #000;
+    font-size: 30px;
+    line-height: 34px;
+}
+/* .loginLeft .MuiOutlinedInput-notchedOutline {
+    border-color: #00DB79;
+  } */
+.loginBtn{
+    height: 50px;
+    width: 100%;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    color: #fff !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    font-family: 'CircularStd-Light' !important;
+    background: linear-gradient(to bottom,  #15b79e 0%,#08aa91 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.signupBtn{
+    height: 50px;
+    border-radius: 12px !important;
+    color: #919395 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    border: #ECEDEE solid 1px !important;
+    box-sizing: border-box !important;
+    font-family: 'CircularStd-Light' !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+    width: 100%;
+    cursor: pointer !important;
+}
+.signupBtn span{
+    color: #15B79E;
+}
+.socialBox{
+    border: #E5E7EB solid 1px;
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 6px 0px;
+}
+.sHeading{
+    display: block;
+    border-bottom: #ECEDEE solid 1px;
+    background-color: #fff;
+    text-align: center;
+    margin: 15px 0px 30px;
+}
+.sHeading span{
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    font-family: 'CircularStd-Light';
+    padding: 0px 15px;
+    position: relative;
+    bottom: -10px;
+    background-color: #fff;
+}
+  .loginRight{
+    width: 50%;
+    background: url('../img/loginRight.png') center top no-repeat;
+    height: 100vh;
+    float: left;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .loginRight h2{
+    color: #fff;
+    font-family: 'CircularStd-Light';
+    font-size: 30px;
+    line-height: 34px;
+    padding: 10px 0px;
+    margin: 0px;
+  }
+  .loginRight h2 span{
+    font-family: 'CircularStd-Black';
+    font-weight: 500;
+  }
+  .loginRight h2 i{
+    color: #00D275;
+    font-style: normal;
+  }
+  .loginRight h5{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    color: #00DB79;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'CircularStd-Light';
+    margin: 0px;
+  }
+  .loginRight p{
+    color: #fff;
+    font-family: 'CircularStd-Light';
+    font-size: 22px;
+    line-height: 26px;
+    padding: 10px 0px;
+    margin: 0px;
+  }
+  .loginError{
+    color: red;
+    text-align: right;
+    padding: 0px 0px 2px;
+    font-size: 12px !important;
+  }
+  /* new login css end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------responsive media querys--------------- */
+
+@media only screen and (min-width: 1680px) and (max-width: 1920px) {}
+@media only screen and (min-width: 1440px) and (max-width: 1680px) {}
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {}
+@media (min-width: 1024px) {}
+@media (min-width: 768px) and (max-width: 1024px){}
+@media (min-width: 768px) and (max-width: 999px) {
+    .loginLeft{
+        width: 100%;
+        height: 100vh;
+        float: none;
+    } 
+    .outerFormBox{
+        padding: 0px 80px;
+        box-sizing: border-box;
+      }
+    .loginRight{
+        width: 100%;
+        height: 100vh;
+        float: none;
+    }      
+}
+@media only screen and (min-width: 768px) {}
+@media (max-width: 767px) {
+.loginLeft{
+    width: 100%;
+    height: 100vh;
+    float: none;
+} 
+.outerFormBox{
+    padding: 0px 80px;
+    box-sizing: border-box;
+  }
+.loginRight{
+    width: 100%;
+    height: 100vh;
+    float: none;
+}    
+
+}
+@media (max-width: 480px) {}
