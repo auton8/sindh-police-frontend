@@ -1,0 +1,115 @@
+.multicolor-bar {
+  margin: 20px 20%;
+}
+
+.multicolor-bar .values .value {
+  float: left;
+  text-align: center;
+}
+
+.multicolor-bar .scale .graduation {
+  float: left;
+  text-align: center;
+}
+
+.multicolor-bar .bars .bar {
+  float: left;
+  height: 10px;
+}
+
+.multicolor-bar .bars div.bar:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.multicolor-bar .bars div.bar:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.multicolor-bar .legends {
+  text-align: center;
+}
+
+.multicolor-bar .legends .legend {
+  display: inline-block;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.multicolor-bar .legends .legend .dot {
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.multicolor-bar .legends .legend .label {
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+.ReactVirtualized__Table__headerColumn {
+  width: 100% !important;
+}
+
+.tHeader {
+  width: '100%' !important;
+}
+
+.not-select {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+
+.not-select > * {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+
+.MuiButtonBase-root {
+  text-transform: none !important;
+}
+.timeSlotChip .css-6od3lo-MuiChip-label {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.slideUpFadeIn {
+	animation: slideUpFadeIn 0.5s ease-in-out;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.borderGray {
+	border: 1px dashed rgb(202, 202, 202);
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px hsla(0, 0%, 58%, 0.8);
+}
+
+@keyframes slideUpFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@import './graph.css'

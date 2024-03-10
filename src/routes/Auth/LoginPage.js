@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Typography, TextField, CircularProgress, Backdrop, Box,InputAdornment } from '@material-ui/core';
+import { Typography, TextField, CircularProgress, Backdrop, Box, InputAdornment } from '@material-ui/core';
 import IntlMessages from '@jumbo/utils/IntlMessages';
 import { isPasswordValid, isValidEmail } from '@jumbo/utils/commonHelper';
 import { useDispatch, useSelector } from 'react-redux';
@@ -112,16 +112,16 @@ const SignIn = ({ method = CurrentAuthMethod, variant = 'default' }) => {
   }, [dispatch, error, message]);
 
   const onSubmit = (e) => {
-    if (password.length < 5) {
-      setMissingParamsError({ ...missingParamsError, password: true, message: '8 characters with a mix of letters, numbers and symbols' });
-    }
+    // if (password.length < 5) {
+    //   setMissingParamsError({ ...missingParamsError, password: true, message: '8 characters with a mix of letters, numbers and symbols' });
+    // }
     if (password.length === 0) {
       setMissingParamsError({ ...missingParamsError, password: true, message: 'This is a required field' });
     }
 
-    if (password.length > 0 && !isPasswordValid(password)) {
-      setMissingParamsError({ ...missingParamsError, password: true, message: '8 characters with a mix of letters, numbers and symbols' });
-    }
+    // if (password.length > 0 && !isPasswordValid(password)) {
+    //   setMissingParamsError({ ...missingParamsError, password: true, message: '8 characters with a mix of letters, numbers and symbols' });
+    // }
     if (!validateWhiteSpace) {
       setMissingParamsError({ ...missingParamsError, email: true, message: 'This is a required field' });
     }
@@ -199,128 +199,128 @@ const SignIn = ({ method = CurrentAuthMethod, variant = 'default' }) => {
   return (
     <div>
 
-    <div className='loginLeft'>
-      <h1>Auton<span>8</span></h1>
-          <form className='outerFormBox'> 
+      <div className='loginLeft'>
+        <h1>Auton<span>8</span></h1>
+        <form className='outerFormBox'>
           <h3>Login</h3>
-            <Box mb={2}>
-              <label>Email</label>
-              <TextField
-                InputProps={{
-                  startAdornment: (
-                   <PersonOutlineOutlinedIcon />
-                  ),
-                 }}
-                fullWidth
-                placeholder="someone@else.com"
-                size="small"
-                onChange={(event) => {
-                  setMissingParamsError({ ...missingParamsError, email: false });
-                  setEmail(event.target.value);
-                }}
-                defaultValue={email}
-                margin="normal"
-                variant="outlined"
-                className={missingParamsError.email == true ? 'filedfocusError' : 'filedfocus'}
-                disabled={common.loading}
-              />
-              {missingParamsError.email && (
-                <Typography className='loginError'>
-                  {missingParamsError.message}
-                </Typography>
-              )}
-            </Box>
-            <Box mb={2} position="relative">
+          <Box mb={2}>
+            <label>Email</label>
+            <TextField
+              InputProps={{
+                startAdornment: (
+                  <PersonOutlineOutlinedIcon />
+                ),
+              }}
+              fullWidth
+              placeholder="someone@else.com"
+              size="small"
+              onChange={(event) => {
+                setMissingParamsError({ ...missingParamsError, email: false });
+                setEmail(event.target.value);
+              }}
+              defaultValue={email}
+              margin="normal"
+              variant="outlined"
+              className={missingParamsError.email == true ? 'filedfocusError' : 'filedfocus'}
+              disabled={common.loading}
+            />
+            {missingParamsError.email && (
+              <Typography className='loginError'>
+                {missingParamsError.message}
+              </Typography>
+            )}
+          </Box>
+          <Box mb={2} position="relative">
             <label>Password</label>
-              <TextField
-                type="password"
-                size="small"
-                placeholder="*******************"
-                InputProps={{
-                  startAdornment: (
-                   <LockOutlinedIcon />
-                  ),
-                 }}
-                fullWidth
-                onChange={(event) => {
-                  setMissingParamsError({ ...missingParamsError, password: false });
-                  setPassword(event.target.value);
-                }}
-                defaultValue={password}
-                margin="normal"
-                variant="outlined"
-                className={password.length === 0  || password.length < 8 ? 'filedfocusError' : 'filedfocus'}
-                disabled={common.loading}
-              />
+            <TextField
+              type="password"
+              size="small"
+              placeholder="*******************"
+              InputProps={{
+                startAdornment: (
+                  <LockOutlinedIcon />
+                ),
+              }}
+              fullWidth
+              onChange={(event) => {
+                setMissingParamsError({ ...missingParamsError, password: false });
+                setPassword(event.target.value);
+              }}
+              defaultValue={password}
+              margin="normal"
+              variant="outlined"
+              className={password.length === 0 || password.length < 8 ? 'filedfocusError' : 'filedfocus'}
+              disabled={common.loading}
+            />
 
-              {missingParamsError.password && (
-                <Typography className='loginError'>
-                  {missingParamsError.message}
-                </Typography>
-              )}
+            {missingParamsError.password && (
+              <Typography className='loginError'>
+                {missingParamsError.message}
+              </Typography>
+            )}
 
+            <Typography
+              onClick={() => {
+                history.push('/forgot');
+              }}
+              variant="body"
+              className={classes.forgot}>
+              Forgot Your Password?
+            </Typography>
+
+
+            <Box mb={2} display={'flex'} width={'100%'} justifyContent={'flex-end'}>
               <Typography
                 onClick={() => {
-                  history.push('/forgot');
+                  history.push('/otp');
                 }}
                 variant="body"
-                className={classes.forgot}>
-                Forgot Your Password?
+                className={classes.activation_link}>
+                Account is not activated ?
               </Typography>
-
-
-              <Box mb={2} display={'flex'} width={'100%'} justifyContent={'flex-end'}>
-                <Typography
-                  onClick={() => {
-                    history.push('/otp');
-                  }}
-                  variant="body"
-                  className={classes.activation_link}>
-                  Account is not activated ?
-                </Typography>
-              </Box>
-              <Box margin="10px 0px">
-                <ReCAPTCHA
-                  sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                  onChange={captchaOnChange}
-                />
-              </Box>
             </Box>
-            {errorMessage !== '' && (
-              <Box width="100%" display="flex">
-                <Typography className='loginError'>
-                  {errorMessage}
-                </Typography>
-              </Box>
-            )}
-            <Box alignItems="center" mt={3} mb={1}>
-              <Button
-                disableRipple
-                fullWidth
-                type="submit"
-                onClick={(e) => {
-                  onSubmit(e);
-                }}
-                variant="contained"
-                color="success"
-                className='loginBtn'
-                disabled={common.loading || !recaptcha}>
-                <IntlMessages id="appModule.signIn" />
-              </Button>
+            <Box margin="10px 0px">
+              <ReCAPTCHA
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                onChange={captchaOnChange}
+              />
             </Box>
-            <Box alignItems="center" mt={3} mb={1}>
-              <Button
-                onClick={() => {
-                  history.push('/signup');
-                }}
-                variant="contained"
-                className='signupBtn'
-                disabled={common.loading}>
-                <Typography>Don’t have an account yet ? <span>Sign Up</span> </Typography>
-              </Button>
+          </Box>
+          {errorMessage !== '' && (
+            <Box width="100%" display="flex">
+              <Typography className='loginError'>
+                {errorMessage}
+              </Typography>
             </Box>
-           <p className='sHeading'><span>OR LOGIN VIA</span></p>
-            <Box display={'flex'} alignItems="center" justifyContent={'space-between'} width="100%">
+          )}
+          <Box alignItems="center" mt={3} mb={1}>
+            <Button
+              disableRipple
+              fullWidth
+              type="submit"
+              onClick={(e) => {
+                onSubmit(e);
+              }}
+              variant="contained"
+              color="success"
+              className='loginBtn'
+              disabled={common.loading || !recaptcha}>
+              <IntlMessages id="appModule.signIn" />
+            </Button>
+          </Box>
+          <Box alignItems="center" mt={3} mb={1}>
+            <Button
+              onClick={() => {
+                history.push('/signup');
+              }}
+              variant="contained"
+              className='signupBtn'
+              disabled={common.loading}>
+              <Typography>Don’t have an account yet ? <span>Sign Up</span> </Typography>
+            </Button>
+          </Box>
+          <p className='sHeading'><span>OR LOGIN VIA</span></p>
+          <Box display={'flex'} alignItems="center" justifyContent={'space-between'} width="100%">
             <Box className='socialBox'>
               <Button
                 onClick={googleAuth}
@@ -343,18 +343,18 @@ const SignIn = ({ method = CurrentAuthMethod, variant = 'default' }) => {
               </Button>
             </Box>
           </Box>
-          </form>
+        </form>
         <Backdrop className={classes.backdrop} open={common.loading}>
           <CircularProgress color="secondary" />
         </Backdrop>
-    </div>
+      </div>
 
-    <div className='loginRight'>
-      <h2>Welcome to <span>Auton <i>8</i></span></h2>
-      <p>Automate your QA testing and achieve greater efficiency.</p>
-      <h5>© 2023 Auton8. All rights reserved</h5>
-    </div>
-    {/* <AuthWrapper variant={wrapperVariant}>
+      <div className='loginRight'>
+        <h2>Welcome to <span>Auton <i>8</i></span></h2>
+        <p>Automate your QA testing and achieve greater efficiency.</p>
+        <h5>© 2023 Auton8. All rights reserved</h5>
+      </div>
+      {/* <AuthWrapper variant={wrapperVariant}>
       <Box className={classes.authContent}>
         <Info />
         <Divider orientation="vertical" flexItem style={{ margin: '0px 30px' }} />
